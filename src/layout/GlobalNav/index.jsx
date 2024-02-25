@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { NavButton } from './NavButton';
 
-export const GlobalNav = () => {
+const GlobalNav = () => {
   return (
     <header
       className={classNames(
@@ -70,3 +70,5 @@ export const GlobalNav = () => {
     </header>
   );
 };
+
+export default GlobalNav;

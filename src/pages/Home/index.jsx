@@ -1,8 +1,10 @@
+import React, { Fragment } from 'react';
 import classNames from 'classnames';
-import { Fragment } from 'react';
-import { GlobalNav } from './layout/GlobalNav';
 
-function App() {
+import GlobalNav from '../../layout/GlobalNav';
+import { Link } from 'react-router-dom';
+
+export const HomePage = () => {
   return (
     <Fragment>
       <GlobalNav />
@@ -85,12 +87,10 @@ function App() {
               'text-white'
             )}
           >
-            회원가입
+            <Link to={'/join'}>회원가입</Link>
           </div>
         </div>
       </main>
     </Fragment>
   );
-}
-
-export default App;
+};
