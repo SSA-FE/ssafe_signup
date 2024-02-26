@@ -57,7 +57,9 @@ h1{
   font-size:20px;
   font-weight:700;
 }
-
+button[disabled]{
+  background-color:grey;
+}
 `
 
 const SignUpMain = () => {
@@ -68,7 +70,7 @@ const SignUpMain = () => {
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [passwordCheckError, setPasswordCheckError] = useState(false);
- 
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const checkEmail = () => {
     const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
     if (!emailRegex.test(email)) {
@@ -76,14 +78,12 @@ const SignUpMain = () => {
     } else {
       setEmailError(false);
     }
-    console.log(emailError || passwordError || passwordCheckError)
+    setIsButtonDisabled(emailError || passwordError || passwordCheckError||email==''||password==''||passwordCheck=='');
  
 
     
   }
-  const setSignUpBtn=()=>{
-    
-  }
+ 
   const checkPassword = () => {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/;
     if (!passwordRegex.test(password)) {
@@ -92,6 +92,8 @@ const SignUpMain = () => {
     else {
       setPasswordError(false);
     }
+    setIsButtonDisabled(emailError || passwordError || passwordCheckError||email==''||password==''||passwordCheck=='');
+
   }
   const checkPasswordCheck = () => {
     if (passwordCheck != password) {
@@ -100,6 +102,8 @@ const SignUpMain = () => {
     else {
       setPasswordCheckError(false);
     }
+    setIsButtonDisabled(emailError || passwordError || passwordCheckError||email==''||password==''||passwordCheck=='');
+
   }
   const handleSignUp = () => {
     checkEmail();
@@ -138,7 +142,7 @@ const SignUpMain = () => {
             <input className='MainInputPwCheck' placeholder='비밀번호를 다시 입력하세요' value={passwordCheck} onChange={(e) => setPasswordCheck(e.target.value)} onBlur={checkPasswordCheck}></input>
             <span className='MainInputPwCheckErr'>비밀번호가 일치하지 않습니다.</span>
           </SignUpInputStyle>
-          <button className='MainSignUpBtn' onClick={handleSignUp}>회원가입</button>
+          <button className='MainSignUpBtn' onClick={handleSignUp} disabled={isButtonDisabled}>회원가입</button>
         </div>
 
       </SignUpMainStyle>
