@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
+import SignUpTopBar from './Components/SignUpTopBar';
+import SignUpHome from './Components/SignUpHome';
+import SignUpMain from './Components/SignUpMain';
+import { createGlobalStyle } from 'styled-components';
+const GlobalStyle = createGlobalStyle`
+body {
+  font-family:Interop;
+}
+`;
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle/>
+      <SignUpMain/>
+      
     </div>
   );
 }
