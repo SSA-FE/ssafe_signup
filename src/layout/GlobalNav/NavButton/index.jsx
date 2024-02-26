@@ -21,9 +21,13 @@ export const NavButton = () => {
 
         'text-white',
         'text-[14px]',
-        'font-bold'
+        'font-bold',
+
+        'cursor-pointer'
       )}
-    >
+     onClick={() => {
+      alert('아직 작성할 수 없습니다!')
+     }}>
       바로 작성하기
     </div>
   );

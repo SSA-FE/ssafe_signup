@@ -81,7 +81,8 @@ export const HomePage = () => {
           )}
         >
           회원가입
-        </div></Link>
+        </div>
+      </Link>
     </Container>
   );
 };

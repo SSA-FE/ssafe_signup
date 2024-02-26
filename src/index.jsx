@@ -13,7 +13,6 @@ const router = createBrowserRouter(routerInfo);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <Fragment>
-    <GlobalNav/>
     <RouterProvider router={router} />
 </Fragment>
 );
