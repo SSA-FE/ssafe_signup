@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 import SignUpTopBar from './SignUpTopBar';
 const SignUpTopBarStyle=styled.div`
     .HomeText{
@@ -13,12 +14,15 @@ const SignUpTopBarStyle=styled.div`
         font-size:20px;
     }
     .HomeContainer{
-        transform:translate(0%,60%);
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top:100px;
     }
     .HomeSignUpBtn{
         margin-top:40px;
         background-color:skyblue;
-        width:350px;
+        width:370px;
         height:50px;
         border-radius:30px;
         border:none;
@@ -38,7 +42,9 @@ const SignUpHome = () => {
             가장 합리적인 방법</h1>
             <p className='HomeText'>폼의 제작, 응답자 모집, 보상, 분석에 불필요한 시간을 쏟지 마세요<br/>
             모든 핵심 과정을 왈라에서 한번에 해결하실 수 있습니다.</p>
+            <Link to='/main'>
             <button className='HomeSignUpBtn'>회원가입</button>
+            </Link>
         </div>
         </SignUpTopBarStyle>
         </>
