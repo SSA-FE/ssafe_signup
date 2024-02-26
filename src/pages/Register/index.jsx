@@ -1,20 +1,12 @@
 import { Link } from "react-router-dom";
-import { InputBox } from "../../components/InputBox";
+import { useForm } from 'react-hook-form';
+
 import { Container } from "../../layout/Container";
 
 import classNames from "classnames";
 
-const INPUT_TYPE = {
-  "이메일": "email",
-  "비밀번호": "password",
-  "비밀번호 확인": "password"
-}
-
-const LABEL = [
-  "이메일", "비밀번호", "비밀번호 확인"
-]
-
 export const RegisterPage = () => {
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
   return (
     <Container className={classNames(
       'flex',
@@ -34,56 +26,125 @@ export const RegisterPage = () => {
         폼나는싸패
       </div>
 
-      <div className={classNames(
+      <form className={classNames(
         'w-1/3',
-      )}>
-        {
-          LABEL.map((label, index) => {
-            return (
-              <div key={"div_" + index} className={classNames(
-                'mb-8',
-              )}>
-                <div key={"label_" + index} className={classNames(
-                  'px-4',
-                  'mb-2',
-
-                  'font-bold',
-                  'text-neutral-600',
-                )}>{label}</div>
-                <InputBox
-                  key={"input_" + index}
-                  label={label}
-                  type={INPUT_TYPE[label]}
-                />
-              </div>
-
-            )
-          })
+      )} onSubmit={handleSubmit(
+        (data) => {
+          console.log(watch('email'));
         }
-        <Link to={'/'}>
+      )}>
+
+        <div className={classNames(
+          'mb-8',
+        )}>
+
           <div className={classNames(
+            'px-4',
+            'mb-2',
+
+            'font-bold',
+            'text-neutral-600',
+          )}>이메일</div>
+          <input type="email" className={classNames(
             'w-full',
-            
-            'mt-20',
-            'py-4',
 
-            'm-auto',
+            'p-4',
 
-            'flex',
-            'justify-center',
-            'items-center',
+            'border-2',
+            'border-neutral-300',
 
             'rounded-full',
 
-            false ? 'bg-theme' : 'bg-[#d4d4d4]',
+            'focus:border-[#6ED1F9]',
+            'focus:outline-none',
+          )}
+            placeholder="ssafe11@gmail.com"
+            {...register("email", { required: true })}
+          />
+          {errors.email && <p>이메일을 입력해주세요</p>}
+        </div>
+
+        <div className={classNames(
+          'mb-8',
+        )}>
+
+          <div className={classNames(
+            'px-4',
+            'mb-2',
 
             'font-bold',
-            'text-white'
-          )}>
-            회원가입
-          </div>
-        </Link>
-      </div>
+            'text-neutral-600',
+          )}>비밀번호</div>
+          <input type="password" className={classNames(
+            'w-full',
+
+            'p-4',
+
+            'border-2',
+            'border-neutral-300',
+
+            'rounded-full',
+
+            'focus:border-[#6ED1F9]',
+            'focus:outline-none',
+          )}
+            {...register("password", { required: true })}
+          />
+          {errors.password && <p>비밀번호를 입력해주세요</p>}
+        </div>
+
+        <div className={classNames(
+          'mb-8',
+        )}>
+
+          <div className={classNames(
+            'px-4',
+            'mb-2',
+
+            'font-bold',
+            'text-neutral-600',
+          )}>비밀번호 확인</div>
+          <input type="password" className={classNames(
+            'w-full',
+
+            'p-4',
+
+            'border-2',
+            'border-neutral-300',
+
+            'rounded-full',
+
+            'focus:border-[#6ED1F9]',
+            'focus:outline-none',
+          )}
+            {...register("passwordConfirm", { required: true })}
+          />
+          {errors.passwordConfirm && <p>비밀번호를 다시 입력해주세요.</p>}
+        </div>
+
+
+        {/* <Link to={'/'}> */}
+        <input type="submit" className={classNames(
+          'w-full',
+
+          'mt-20',
+          'py-4',
+
+          'm-auto',
+
+          'flex',
+          'justify-center',
+          'items-center',
+
+          'rounded-full',
+
+          false ? 'bg-theme' : 'bg-[#d4d4d4]',
+
+          'font-bold',
+          'text-white'
+        )} value={'회원가입'} />
+        {/* </Link> */}
+      </form>
     </Container>
   )
 };
