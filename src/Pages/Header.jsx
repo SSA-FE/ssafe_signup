@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderArea = styled.div`
+  font-family: "Noto Sans KR";
   position: fixed;
   top: 0;
   width: 100%;
@@ -34,17 +35,17 @@ const Logo = styled.div`
 
 const InfoText = styled.div`
   width: flex;
-  height: flex;
-  padding: 7px 15px;
+  height: 100%;
+  padding: 2px 15px;
   margin: 10px;
   font-size: 12px;
-  align-content: center;
   text-align: center;
+  align-items: center;
   border-radius: 60px;
 `;
 
 const WriteButton = styled.button`
-  width: 165px;
+  width: 170px;
   height: 50px;
   margin: 5px 30px 5px 5px;
   font-size: 17px;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
+  font-family: "Noto Sans KR";
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -44,8 +45,6 @@ const SignupButton = styled.button`
   cursor: pointer;
 `;
 
-// Button 아니고 Link 자체를 컴포넌트로 받을 방법?
-
 const Home = () => {
   return (
     <Container>
@@ -59,7 +58,7 @@ const Home = () => {
         <Description>
           폼의 제작, 응답자 모집, 보상, 분석에 불필요한 시간을 쏟지 마세요.
           <br />
-          모든 핵심 과정을 왈라에서 한번에 해결하실 수 있습니다.
+          모든 핵심 과정을 폼나는싸패에서 한번에 해결하실 수 있습니다.
         </Description>
       </TextBoard>
       <Link to="/Signup">
