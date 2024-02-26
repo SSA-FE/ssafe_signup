@@ -1,15 +1,17 @@
 import classNames from 'classnames';
 import { NavButton } from './NavButton';
 
+import { Link } from 'react-router-dom';
+
 const GlobalNav = () => {
   return (
     <header
       className={classNames(
         'w-full',
-        'h-[62px]',
+        'h-full',
 
-        'px-4',
-        'py-8',
+        'px-8',
+        'py-4',
 
         'border-b',
         'border-solid',
@@ -21,15 +23,19 @@ const GlobalNav = () => {
       )}
     >
       <div className={classNames('flex', 'justify-between', 'items-center')}>
-        <div className={classNames('font-bold')}>폼나는 싸패</div>
+        <Link to="/">
+          <div className={classNames('font-bold', 'cursor-pointer')}>폼나는 싸패</div>
+        </Link>
 
-        <div className={classNames('flex', 'justify-between', 'items-center')}>
+
+
+        <div className={classNames('ml-12', 'gap-x-4', 'flex', 'justify-between', 'items-center')}>
           <div
             className={classNames(
-              'w-[122px]',
-              'h-[25px]',
+              'px-4',
+              'py-2',
 
-              'rounded-[16px]',
+              'rounded-full',
 
               'flex',
               'justify-center',
@@ -46,10 +52,10 @@ const GlobalNav = () => {
 
           <div
             className={classNames(
-              'w-[314px]',
-              'h-[25px]',
+              'px-4',
+              'py-2',
 
-              'rounded-[16px]',
+              'rounded-full',
 
               'flex',
               'justify-center',

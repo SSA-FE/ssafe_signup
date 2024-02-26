@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { HomePage } from '../pages/Home';
 import { RegisterPage } from '../pages/Register';
+import GlobalNav from '../layout/GlobalNav';
 
 export const routerInfo = [
   {
     path: '/',
-    element: <HomePage />,
+    element: (
+      <Fragment>
+        <GlobalNav />
+        <HomePage />
+      </Fragment>
+    ),
   },
 
   {
     path: '/join',
-    element: <RegisterPage />,
+    element: (
+      <Fragment>
+        <GlobalNav />
+        <RegisterPage />
+      </Fragment>
+    ),
   },
 ];
