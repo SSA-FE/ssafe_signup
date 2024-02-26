@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { Container } from '../../layout/Container';
 import classNames from 'classnames';
+import { RegisterButton } from '../../components/RegisterButton';
 
 export const HomePage = () => {
   return (
@@ -15,7 +16,7 @@ export const HomePage = () => {
     >
       <div
         className={classNames(
-          'mb-[112px]',
+          'mb-32',
 
           'flex',
           'flex-col',
@@ -31,8 +32,6 @@ export const HomePage = () => {
 
         <div
           className={classNames(
-            'w-[521px]',
-
             'my-4',
 
             'text-center',
@@ -60,28 +59,7 @@ export const HomePage = () => {
         </div>
       </div>
       <Link to={'/join'}>
-        <div
-          className={classNames(
-            'w-[400px]',
-            'h-[67.5px]',
-
-            'm-auto',
-
-            'flex',
-            'justify-center',
-            'items-center',
-
-            'rounded-full',
-
-            'bg-theme',
-
-            'text-[24px]',
-            'font-bold',
-            'text-white'
-          )}
-        >
-          회원가입
-        </div>
+        <RegisterButton/>
       </Link>
     </Container>
   );
