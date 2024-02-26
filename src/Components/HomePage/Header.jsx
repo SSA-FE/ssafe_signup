@@ -2,54 +2,73 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderArea = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 70px;
   display: flex;
-  background-color: pink;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: 0px 0px 1.5px 0px;
+  border-bottom-color: #e0e0e0;
+`;
+
+const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Logo = styled.div`
-  width: 150px;
-  height: 50px;
+  width: flex;
+  height: flex;
+  margin: 10px 30px;
   color: #263238;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  align-items: center;
   background-color: white;
   border-radius: 10px;
 `;
 
-const Texti = styled.div`
+const InfoText = styled.div`
   width: flex;
-  height: 10px;
-  color: #263238;
-  padding: 10px;
+  height: flex;
+  padding: 7px 15px;
+  margin: 10px;
   font-size: 12px;
+  align-content: center;
   text-align: center;
   border-radius: 60px;
-  background-color: #b2ebf2;
 `;
 
 const WriteButton = styled.button`
-  width: 150px;
+  width: 165px;
   height: 50px;
-  font-size: 15px;
+  margin: 5px 30px 5px 5px;
+  font-size: 17px;
+  font-weight: bold;
   background-color: black;
   border-radius: 10px;
+  border-color: transparent;
   color: white;
+  cursor: pointer;
 `;
 
 const Header = () => {
   return (
     <>
       <HeaderArea>
-        <Logo>폼나는 싸패</Logo>
-        <Texti style={{ color: "#9E9E9E", backgroundColor: "#EEEEEE" }}>
-          v 3.4.1 24/02/13
-        </Texti>
-        <Texti style={{ color: "#26C6DA" }}>
-          2024 SSAFE FORM PROJECT Creare your own Form
-        </Texti>
+        <HeaderLeft>
+          <Logo>폼나는 싸패</Logo>
+          <InfoText style={{ color: "#9E9E9E", backgroundColor: "#EEEEEE" }}>
+            v 3.4.1 24/02/13
+          </InfoText>
+          <InfoText style={{ color: "#26C6DA", backgroundColor: "#E0F7FA" }}>
+            2024 SSAFE FORM PROJECT Creare your own Form
+          </InfoText>
+        </HeaderLeft>
         <WriteButton>바로 작성하기</WriteButton>
       </HeaderArea>
     </>
