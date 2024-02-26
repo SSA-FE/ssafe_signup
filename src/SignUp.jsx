@@ -1,17 +1,72 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-// https://wpioneer.tistory.com/251  링크 세팅, 라우팅
-// https://velog.io/@jin_h2_/React-%EB%A7%81%ED%81%AC-%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0-Router-Link-useNavigate-hook
-// -> url 변경해도 같은 화면 보이는 거 ; ;
+//회원가입 button은 Home에서 완성하면 옮기자
+const TextBoard = styled.div`
+  display: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-const SignUp = () => {
-    return(
-        <div>
-            <h1>SignUp-Page</h1>
-            <Link to="/">Go to HomePage</Link>;
-        </div>
-    );
-}
+const TextBox = styled.div`
+  width: 500px;
+  height: 100px;
+  justify-content: center;
+  background-color: #fff8e1;
+`;
 
-export default SignUp;
+const InputText = styled.input`
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: #e0e0e0;
+`;
+
+const SignupButton = styled.button`
+  width: 280px;
+  height: 45px;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #81d4fa;
+  border-radius: 30px;
+  border-color: transparent;
+  color: white;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  font-size: 50px;
+`;
+
+const Signup = () => {
+  return (
+    <TextBoard>
+      <Title>
+        더 쉬운 폼을 위한 시작
+        <br />
+        폼나는싸패
+      </Title>
+      <TextBox>
+        이메일
+        <br />
+        <InputText placeholder="ssafe11@gmail.com"></InputText>
+      </TextBox>
+      <TextBox>
+        비밀번호
+        <br />
+        <InputText></InputText>
+      </TextBox>
+      <TextBox>
+        비밀번호 확인
+        <br />
+        <InputText></InputText>
+      </TextBox>
+      <Link to="/">
+        <SignupButton>회원가입</SignupButton>
+      </Link>
+    </TextBoard>
+  );
+};
+
+export default Signup;
