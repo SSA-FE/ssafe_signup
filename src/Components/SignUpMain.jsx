@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState,useEffect} from 'react';
 import styled from "styled-components";
 import SignUpTopBar from './SignUpTopBar';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,7 @@ const SignUpInputStyle = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
+position:relative;
 
 b{
   text-align:left;
@@ -31,6 +32,12 @@ input{
 input:focus{
   border:3px solid skyblue;
   outline:none;
+}
+.MainVisibleImg{
+  position:absolute;
+  top:70px;
+  right:15px;
+  opacity:50%;
 }
 `
 const SignUpMainStyle = styled.div`
@@ -71,6 +78,11 @@ const SignUpMain = () => {
   const [passwordError, setPasswordError] = useState(false);
   const [passwordCheckError, setPasswordCheckError] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+  const [isPwVisible,setIsPwVisible]=useState(false);
+  const [isPwCheckVisible,setIsPwCheckVisible]=useState(false);
+  useEffect(() => {
+    setIsButtonDisabled(emailError || passwordError || passwordCheckError||email==''||password==''||passwordCheck=='')
+  }, [emailError, passwordError, passwordCheckError]);
   const checkEmail = () => {
     const emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i
     if (!emailRegex.test(email)) {
@@ -116,7 +128,22 @@ const SignUpMain = () => {
     } else {
       console.log('회원가입 버튼 클릭: 유효성 검사 실패');
     }
-
+  }
+  const handlePwVisibleBtn=()=>{
+    if(isPwVisible){
+      setIsPwVisible(false);
+    }
+    else{
+      setIsPwVisible(true);
+    }
+  }
+  const handlePwCheckVisibleBtn=()=>{
+    if(isPwCheckVisible){
+      setIsPwCheckVisible(false);
+    }
+    else{
+      setIsPwCheckVisible(true);
+    }
   }
   return (
     <>
@@ -130,16 +157,19 @@ const SignUpMain = () => {
           <SignUpInputStyle error={emailError}>
             <b>이메일</b>
             <input className='MainInputEmail' placeholder='이메일을 입력하세요' value={email} onChange={(e) => setEmail(e.target.value)} onBlur={checkEmail}></input>
+            
             <span className='MainInputEmailErr'>유효하지않은 이메일 입니다.</span>
           </SignUpInputStyle>
           <SignUpInputStyle error={passwordError}>
             <b>비밀번호</b>
-            <input className='MainInputPw' placeholder='비밀번호를 입력하세요' value={password} onChange={(e) => setPassword(e.target.value)} onBlur={checkPassword}></input>
+            <input className='MainInputPw' type={isPwVisible ? "text" : "password"}placeholder='비밀번호를 입력하세요' value={password} onChange={(e) => setPassword(e.target.value)} onBlur={checkPassword}></input>
+            <img className='MainVisibleImg'src={isPwVisible?'res/iconInVisible.svg':'res/iconVisible.svg'} onClick={handlePwVisibleBtn}alt='visible'></img>
             <span className='MainInputPwErr'>유효하지않은 비밀번호 입니다.</span>
           </SignUpInputStyle>
           <SignUpInputStyle error={passwordCheckError}>
             <b>비밀번호 확인</b>
-            <input className='MainInputPwCheck' placeholder='비밀번호를 다시 입력하세요' value={passwordCheck} onChange={(e) => setPasswordCheck(e.target.value)} onBlur={checkPasswordCheck}></input>
+            <input className='MainInputPwCheck'type={isPwCheckVisible ? "text" : "password"} placeholder='비밀번호를 다시 입력하세요' value={passwordCheck} onChange={(e) => setPasswordCheck(e.target.value)} onBlur={checkPasswordCheck}></input>
+            <img className='MainVisibleImg'src={isPwCheckVisible?'res/iconInVisible.svg':'res/iconVisible.svg'} onClick={handlePwCheckVisibleBtn} alt='visible'></img>
             <span className='MainInputPwCheckErr'>비밀번호가 일치하지 않습니다.</span>
           </SignUpInputStyle>
           <button className='MainSignUpBtn' onClick={handleSignUp} disabled={isButtonDisabled}>회원가입</button>
