@@ -1,7 +1,7 @@
 import './App.css';
 
-import SignUpHome from './Components/SignUpHome';
-import SignUpMain from './Components/SignUpMain';
+import SignUpHome from './Pages/SignUpHome';
+import SignUpMain from './Pages/SignUpMain';
 import { createGlobalStyle } from 'styled-components';
 import { Route,Routes} from "react-router-dom";
 import { Reset } from 'styled-reset'

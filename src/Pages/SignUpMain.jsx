@@ -1,6 +1,6 @@
 import React, { useState,useEffect} from 'react';
 import styled from "styled-components";
-import SignUpTopBar from './SignUpTopBar';
+import SignUpTopBar from '../Components/SignUpTopBar';
 import { useNavigate } from 'react-router-dom';
 const SignUpInputStyle = styled.div`
 display:flex;
@@ -14,7 +14,6 @@ b{
   margin:30px 5px 5px 5px;
 }
 span{
-  
   color:red;
   text-align:left;
   width:330px;

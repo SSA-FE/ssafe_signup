@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-import SignUpTopBar from './SignUpTopBar';
+import SignUpTopBar from '../Components/SignUpTopBar';
 const SignUpTopBarStyle=styled.div`
     .HomeText{
         margin:30px;
