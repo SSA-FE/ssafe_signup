@@ -27,9 +27,15 @@ const GlobalNav = () => {
           <div className={classNames('font-bold', 'cursor-pointer')}>폼나는 싸패</div>
         </Link>
 
+        <div className={classNames(
+          'ml-12',
 
+          'gap-x-4',
 
-        <div className={classNames('ml-12', 'gap-x-4', 'flex', 'justify-between', 'items-center')}>
+          'flex',
+          'justify-between',
+          'items-center'
+        )}>
           <div
             className={classNames(
               'px-4',

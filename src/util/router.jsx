@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import { HomePage } from '../pages/Home';
-import { RegisterPage } from '../pages/Register';
+import { HomePage } from '../pages/home';
+import { RegisterPage } from '../pages/register';
 import GlobalNav from '../layout/GlobalNav';
 
 export const routerInfo = [

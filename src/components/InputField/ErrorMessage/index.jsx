@@ -7,7 +7,6 @@ export const ErrorMessage = ({ children }) => {
 
             'text-[#F93F3F]',
             'text-sm',
-
             'font-semibold',
         )}>
            {children} &nbsp;
