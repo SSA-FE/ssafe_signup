@@ -76,10 +76,6 @@ const Signup = () => {
     console.log(data);
   };
 
-  // const onClickHandler = () => {
-  //   alert("Submitted");
-  // };
-
   return (
     <Container>
       <TextBoard>
@@ -110,7 +106,7 @@ const Signup = () => {
                 required: "비밀번호는 필수 입력입니다",
                 minLength: 8,
                 maxLength: 16,
-                pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,16}$/
+                pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,16}$/,
               })}
               errors={errors}
               placeholder="********"
