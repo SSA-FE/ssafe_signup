@@ -34,8 +34,8 @@ export const InputField = ({ label, type, register, errors, ...rest }) => {
                         {...register("password", {
                             required: true,
                             pattern: {
-                                value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/,
-                                message: "비밀번호는 8자 이상 16자 이하, 하나 이상의 영문자와 하나 이상의 숫자, 하나 이상의 특수문자로 구성되어야 합니다."
+                                value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!])[A-Za-z\d@$!%*#?&]{8,16}$/,
+                                message: "비밀번호는 8자 이상 16자 이하, 하나 이상의 영문자와 숫자, @, #, ! 중 하나 이상의 특수문자로 구성되어야 합니다."
                             }
                         })}
                     />
