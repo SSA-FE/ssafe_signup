@@ -1,7 +1,7 @@
 # Register
 
 > React로 Sign Up Form 만들기
-> 개발 기간: 24.02.22
+> 개발 기간: 24.02.22 - 02.27
 
 <br/>
 <br/>

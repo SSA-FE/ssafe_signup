@@ -1,12 +1,10 @@
 import classNames from 'classnames';
 
-export const RegisterButton = () => {
+export const SignupButton = () => {
     return (<div
         className={classNames(
             'w-[300px]',
             'py-4',
-
-            'm-auto',
 
             'flex',
             'justify-center',

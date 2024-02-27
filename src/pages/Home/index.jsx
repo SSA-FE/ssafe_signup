@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 
 import { Container } from '../../layout/Container';
+import { SignupButton } from '../../components/SignupButton';
+
 import classNames from 'classnames';
-import { RegisterButton } from '../../components/RegisterButton';
 
 export const HomePage = () => {
   return (
@@ -59,7 +60,7 @@ export const HomePage = () => {
         </div>
       </div>
       <Link to={'/join'}>
-        <RegisterButton/>
+        <SignupButton/>
       </Link>
     </Container>
   );
