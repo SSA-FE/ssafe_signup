@@ -10,11 +10,12 @@ export const RegisterPage = () => {
   const navigate = useNavigate();
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
-    mode: 'onChange'
+    mode: 'onChange',
   });
 
   const onSubmit = (data) => {
     const { email, password } = data;
+    console.log(errors)
 
     alert(`이메일: ${email} \n비밀번호: ${password}`)
 
@@ -59,7 +60,7 @@ export const RegisterPage = () => {
 
           'rounded-full',
 
-          watch('email') && watch('password') && watch('passwordConfirm') ? 'bg-theme cursor-pointer hover:bg-opacity-80' : 'bg-[#d4d4d4]',
+          watch('email') && watch('password') && watch('passwordConfirm') && !errors.email && !errors.password && !errors.passwordConfirm ? 'bg-theme cursor-pointer hover:bg-opacity-80' : 'bg-[#d4d4d4]',
 
           'font-bold',
           'text-white',
