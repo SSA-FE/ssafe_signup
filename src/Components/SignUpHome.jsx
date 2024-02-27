@@ -19,8 +19,10 @@ const SignUpTopBarStyle=styled.div`
         align-items:center;
         margin-top:100px;
     }
-    .HomeSignUpBtn{
+    a{
         margin-top:40px;
+    }
+    .HomeSignUpBtn{
         background-color:skyblue;
         width:370px;
         height:50px;
@@ -29,6 +31,7 @@ const SignUpTopBarStyle=styled.div`
         color:white;
         font-size:20px;
         font-weight:700;
+        cursor:pointer;
     }
 `
 const SignUpHome = () => {

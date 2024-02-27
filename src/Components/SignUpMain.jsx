@@ -54,7 +54,6 @@ h1{
 }
 
 .MainSignUpBtn{
-  margin-top:40px;
   background-color:skyblue;
   width:370px;
   height:50px;
@@ -63,6 +62,8 @@ h1{
   color:white;
   font-size:20px;
   font-weight:700;
+  cursor:pointer;
+  margin-top:40px;
 }
 button[disabled]{
   background-color:grey;
