@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
 
+import SignUpHome from './Pages/SignUpHome';
+import SignUpMain from './Pages/SignUpMain';
+import { createGlobalStyle } from 'styled-components';
+import { Route,Routes} from "react-router-dom";
+import { Reset } from 'styled-reset'
+
+const GlobalStyle = createGlobalStyle`
+body {
+  font-family:Interop;
+}
+`;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Reset/>
+      <GlobalStyle/>
+      <Routes>
+        <Route path="/" exact element={<SignUpHome/>} />
+        <Route path="/main" element={<SignUpMain/>} />
+      </Routes>
+    </>
+   
+    
   );
 }
 
