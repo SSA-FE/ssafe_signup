@@ -1,33 +1,34 @@
-import classNames from 'classnames';
+import classNames from "classnames";
 
 export const NavButton = () => {
   return (
     <div
       className={classNames(
-        'w-[147px]',
-        'h-[46px]',
+        "w-[147px]",
+        "h-[46px]",
 
-        'flex',
-        'justify-center',
-        'items-center',
+        "flex",
+        "justify-center",
+        "items-center",
 
-        'bg-black',
+        "bg-black",
 
-        'rounded-md',
+        "rounded-md",
 
-        'hover:bg-opacity-80',
-        'transition-all',
-        'duration-200',
+        "hover:bg-opacity-80",
+        "transition-all",
+        "duration-200",
 
-        'text-white',
-        'text-[14px]',
-        'font-bold',
+        "text-white",
+        "text-[14px]",
+        "font-bold",
 
-        'cursor-pointer'
+        "cursor-pointer"
       )}
-     onClick={() => {
-      alert('아직 작성할 수 없습니다!')
-     }}>
+      onClick={() => {
+        alert("아직 작성할 수 없습니다!");
+      }}
+    >
       바로 작성하기
     </div>
   );

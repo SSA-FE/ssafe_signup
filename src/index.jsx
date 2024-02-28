@@ -1,17 +1,16 @@
-import React, { Fragment } from 'react';
-import ReactDOM from 'react-dom/client';
+import React, { Fragment } from "react";
+import ReactDOM from "react-dom/client";
 
-import './reset.css';
-import './index.css';
+import "./index.css";
 
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { routerInfo } from './util/router';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { routerInfo } from "./util/router";
 
 const router = createBrowserRouter(routerInfo);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<Fragment>
+  <Fragment>
     <RouterProvider router={router} />
-</Fragment>
+  </Fragment>
 );
