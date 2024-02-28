@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import { SignupButton } from "../../components/SignupButton";
-
 import classNames from "classnames";
 
 export const HomePage = () => {
